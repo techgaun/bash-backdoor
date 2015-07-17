@@ -11,10 +11,12 @@ This little backdoor works well with traditional netcat with -e option but it ca
 
 ### Usage
 Run daemon.sh
-$ ./daemon.sh
+
+`$ ./daemon.sh`
 
 Run client.sh
-$ ./client.sh
+
+`$ ./client.sh`
 
 You can run command on the simple prompt in your client-side now.
 
