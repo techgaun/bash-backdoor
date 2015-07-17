@@ -35,5 +35,6 @@ decrypt() {
 
 runcmd() {
      # runs whatever command is passed
-     "${SHELL}" -c "$*"
+     cmdoutput=$("${SHELL}" -c "$*")
+     encrypt "${cmdoutput}"
 }

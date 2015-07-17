@@ -15,7 +15,8 @@ while :; do
         echo "Exiting..."
         exit 0
     fi
-    encrypt "${req}" | "${NC}" "${BIND_HOST}" "${BIND_PORT}"
+    response=$(encrypt "${req}" | "${NC}" "${BIND_HOST}" "${BIND_PORT}")
+    decrypt "${response}"
 done
 
 exit 0
