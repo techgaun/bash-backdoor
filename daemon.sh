@@ -8,6 +8,8 @@ BASEDIR=$(dirname $SCRIPT)
 
 req=
 
+trap 'quit' INT TERM QUIT
+
 while :; do
     "${NC}" -n -l -p "${BIND_PORT}" -e "./cmd.sh"
 done

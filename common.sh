@@ -38,3 +38,8 @@ runcmd() {
      cmdoutput=$("${SHELL}" -c "$*")
      encrypt "${cmdoutput}"
 }
+
+quit() {
+    echo "Exiting..."
+    exit 0
+}

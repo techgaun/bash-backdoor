@@ -7,13 +7,14 @@ BASEDIR=$(dirname $SCRIPT)
 . "${BASEDIR}/common.sh"
 req=
 
-trap 'exit 1' INT TERM
+trap 'quit' INT TERM QUIT
 
+echo "Enter quit to exit"
 while :; do
+    printf "$ "
     read req
     if [ "${req}" = "quit"  ]; then
-        echo "Exiting..."
-        exit 0
+        quit
     fi
     response=$(encrypt "${req}" | "${NC}" "${BIND_HOST}" "${BIND_PORT}")
     decrypt "${response}"
