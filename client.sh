@@ -15,7 +15,7 @@ while :; do
         echo "Exiting..."
         exit 0
     fi
-    echo "${req}" | encrypt | $NC $HOST $PORT
+    encrypt "${req}" | "${NC}" "${BIND_HOST}" "${BIND_PORT}"
 done
 
 exit 0

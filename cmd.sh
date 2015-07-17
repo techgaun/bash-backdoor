@@ -7,7 +7,6 @@ BASEDIR=$(dirname $SCRIPT)
 . "${BASEDIR}/common.sh"
 
 req=
-
-while :; do
-    "${NC}" -n -l -p "${BIND_PORT}" -e "./cmd.sh"
-done
+read -r req
+req=$(decrypt "${req}")
+runcmd "${req}"
