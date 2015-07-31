@@ -35,8 +35,18 @@ decrypt() {
 
 runcmd() {
      # runs whatever command is passed
-     cmdoutput=$("${SHELL}" -c "$*")
+     cmdoutput=$("${SHELL}" -c "$*" 2>&1)
      encrypt "${cmdoutput}"
+}
+
+stdinencrypt() {
+    [ $# -ge 1 -a -f "$1"   ] && input="$1" || input="-"
+    encrypt $(cat "${input}")
+}
+
+stdindecrypt() {
+    [ $# -ge 1 -a -f "$1"   ] && input="$1" || input="-"
+    decrypt $(cat "${input}")
 }
 
 quit() {
