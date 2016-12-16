@@ -25,7 +25,6 @@ IV="${IV:-644227EB3C302982B12006A27F8C7717}"
 SALT="${SALT:-0538FC5E338ED0FF}"
 
 encrypt() {
-    # encode all args, quoted single arg is recommended though
     echo "$*" | "${OPENSSL}" enc -S "$SALT" -a -K "${KEY}" -iv "${IV}" -aes-256-cbc
 }
 
@@ -34,7 +33,6 @@ decrypt() {
 }
 
 runcmd() {
-     # runs whatever command is passed
      cmdoutput=$("${SHELL}" -c "$*" 2>&1)
      encrypt "${cmdoutput}"
 }
