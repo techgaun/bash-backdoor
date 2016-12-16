@@ -7,8 +7,8 @@ This little backdoor works well with traditional netcat with -e option but it ca
 My attempt to add support for nc.openbsd has not been very successful. Currently, nc.traditional works very well. nc.openbsd package however has issue in sending output back to client. PRs welcome
 
 * The data over communication channel is totally encrypted with aes-256-cbc using openssl.
-* You can generate new key, salt and iv. Check [common.sh](common.sh) for reference
-* You can pass several options as env-vars. Check [common.sh](common.sh) for reference
+* You can generate new key, salt and iv. Check [common.sh](common.sh#L22) for reference
+* You can pass several options as env-vars. Check [common.sh](common.sh#L15-L19) for reference
 
 ### Usage
 Run daemon.sh
